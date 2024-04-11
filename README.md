@@ -15,7 +15,7 @@ In this lab, we utilized Firefox as our browser. In Firefox, you'll enable the Z
 
 ![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/47531920-91b3-4221-841b-14393e06b2af)
 
-<h2>Step 2 - Start/Open WebGoat</h2>
+<h1>Step 2 - Start/Open WebGoat</h1>
 
 WebGoat is an insecure web application created by OWASP to demonstrate application vulnerabilities. Open WebGoat by double-clicking it. It will launch in a terminal and allow it to load completely. You will know when it has finished loading when the message "Browse to http://localhost:8080/WebGoat and happy hacking!" is shown. 
 
@@ -23,14 +23,14 @@ WebGoat is an insecure web application created by OWASP to demonstrate applicati
 
 Return back to Firebox and navigate to localhost:8080/WebGoat. WebGoat provides guest login credentials; go ahead and use the guest account to login.
 
-<h3>Step 3 - Begin the SQL Injection in WebGoat</h3>
+<h1>Step 3 - Begin the SQL Injection in WebGoat</h1>
 
 In the left pane, click **Injection Flaws** > **Stage 1: String SQL Injection** 
 
 ![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/bb39ecf3-32fc-4f7e-9e58-4619e54e5e7a)
 
 
-<h4>Step 4 - Launch the SQL Injection Attack</h4>
+<h1>Step 4 - Launch the SQL Injection Attack</h1>
 
 At the login page, if you click the dropdown menu you can see a list of employee names with a password field underneath. We will use an injection attack to login without a password. 
 
@@ -53,7 +53,7 @@ At the top of of tools bar on ZAP, press the **Submit and step to next request o
 
 ![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/adef5d71-236f-4874-85fe-4efb5519d9c5)
 
-<h5>Step 5 - View Staff Information</h5>
+<h1>Step 5 - View Staff Information</h1>
 
 Go back to ZAP and click the **Submit and continue to next break point** icon on the tool bar. This will run through the rest of the process and remove the break point, allowing us to move freely throughout the browser without being intercepted by ZAP.
 
@@ -63,7 +63,7 @@ Back in Firefox, click any employee's name and you're able to view their profile
 
 ![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/fd351605-1db6-4dad-a08d-8e4a29aaddf7)
 
-<h6>Step 6 - Perform a Command Injection</h6>
+<h1>Step 6 - Perform a Command Injection</h1>
 
 Now we will conduct a command injection; this takes advantage of vulnerabilites that allow us to run shell commands on the underlying host. Back in the WebGoat menu, click **Injection Flaws > Command Injection**
 
