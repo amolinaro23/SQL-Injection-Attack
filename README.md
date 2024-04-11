@@ -40,9 +40,37 @@ Go back to ZAP and click the **Set Break** icon (It's the Green Circle above the
 
 ![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/c7e5346a-7d71-402d-98d2-292130f2c320)
 
-ZAP will now intercept all web requests and responses allowing us to examine them. Go back to WebGoat and log in as Neville Bartholomew using the password, "guest". Go back to the ZAP window 
+ZAP will now intercept all web requests and responses allowing us to examine them. Go back to WebGoat and log in as Neville Bartholomew using the password, "guest". Go back to the ZAP window, and you should receieve this. 
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/c73e0141-10c8-4c2a-a9e1-73d60b3fbdfb)
+
+Now, we are going to inject our SQL attack by changing the password to = 1' OR '1'='1. 
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/faeafde8-2e38-4948-ae72-cd36dede4c8c)
 
 
+At the top of of tools bar on ZAP, press the **Submit and step to next request or response** button twice. This submits the request to the server and then back to WebGoat. Return back to your Firefox window. You should get a notification that states you've made it to Stage 2. Notice we have now logged in as an admin and can see a list of all employees. 
 
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/adef5d71-236f-4874-85fe-4efb5519d9c5)
 
+<h5>Step 5 - View Staff Information</h5>
 
+Go back to ZAP and click the **Submit and continue to next break point** icon on the tool bar. This will run through the rest of the process and remove the break point, allowing us to move freely throughout the browser without being intercepted by ZAP.
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/c1c77f31-eb27-4886-b581-9830bab0788a)
+
+Back in Firefox, click any employee's name and you're able to view their profile. We're not only able to view, but can edit their private information and find PII like their Social Security Number and their Credit Card number. 
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/fd351605-1db6-4dad-a08d-8e4a29aaddf7)
+
+<h6>Step 6 - Perform a Command Injection</h6>
+
+Now we will conduct a command injection; this takes advantage of vulnerabilites that allow us to run shell commands on the underlying host. Back in the WebGoat menu, click **Injection Flaws > Command Injection**
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/b298da54-63f1-480d-b11f-5363cb553d58)
+
+Next, go back to ZAP and use the command **Ctrl+B**. This is a keyboard shortcut to set a break in ZAP. Once you've set your break in ZAP, go back to WebGoat and on the dropdown menu next to **Select the lesson plan to view** choose any lesson from the menu and click **View**. You should get the intercepted request with the "Helpfile" field. Here is where we will try our injection to run the shell commands.
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/427f5b9c-20bf-44e3-b49e-07e09cf1aa9e)
+
+In the request, replace the file name with **NoRealFile.help" || netstat -an**. 
