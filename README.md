@@ -73,4 +73,17 @@ Next, go back to ZAP and use the command **Ctrl+B**. This is a keyboard shortcut
 
 ![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/427f5b9c-20bf-44e3-b49e-07e09cf1aa9e)
 
-In the request, replace the file name with **NoRealFile.help" || netstat -an**. 
+In the request, replace the file name with **NoRealFile.help" || netstat -an**. Then click **Submit and step to next request or response** twice. 
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/27f2b872-124b-4d39-af20-5912d203bb07)
+
+Instead of the requested file, the page displays the output of the 'netstat' command from the host's perspective. 
+
+![image](https://github.com/amolinaro23/SQL-Injection-Attack/assets/164687651/54fcdf2f-37f6-449e-a52c-67b7f409ea51)
+
+The End! 
+
+Thanks for check out my SQL Injection Attack!
+
+
+
